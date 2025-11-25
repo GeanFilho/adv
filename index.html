@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advocacia Especializada em Direito Previdenciário e Trabalhista.">
+    <title>Jurídico Legal | Advocacia Especializada</title>
+
+    <!-- Fontes Google (Premium) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="#" class="whatsapp-float" id="whatsapp-float" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1>JURÍDICO<span>LEGAL</span></h1>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#atuacao">Áreas</a></li>
+                    <li><a href="#calculadoras">Cálculos</a></li>
+                    <li><a href="#sobre">Sobre</a></li> <!-- Ordem ajustada -->
+                    <li><a href="#blog">Artigos</a></li>
+                    <li><a href="#contato" class="btn-nav">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h2>Defendendo seus direitos com excelência e estratégia.</h2>
+            <p>Especialistas em Direito Previdenciário e Trabalhista. Orientação jurídica sem sair de casa.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" onclick="redirectToWhatsapp('Gostaria de uma consultoria gratuita.')">Falar com Advogado</a>
+                <a href="#calculadoras" class="btn btn-outline">Calcular Direitos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section id="atuacao" class="section">
+        <div class="container">
+            <h3 class="section-title">Nossas Áreas de Atuação</h3>
+            <p class="section-subtitle">Soluções jurídicas focadas no seu benefício.</p>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <i class="fas fa-blind icon-area"></i>
+                    <h4>Direito Previdenciário</h4>
+                    <ul class="area-list">
+                        <li>BPC/LOAS</li>
+                        <li>Aposentadoria Rural</li>
+                        <li>Auxílio Doença</li>
+                        <li>Autismo & Benefícios</li>
+                    </ul>
+                    <button class="btn-text" onclick="redirectToWhatsapp('Tenho dúvida sobre Previdenciário')">Tirar Dúvida <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <div class="area-card">
+                    <i class="fas fa-briefcase icon-area"></i>
+                    <h4>Direito Trabalhista</h4>
+                    <ul class="area-list">
+                        <li>Rescisão Indireta</li>
+                        <li>Acidente de Trabalho</li>
+                        <li>Verbas Rescisórias</li>
+                        <li>Adicional Insalubridade</li>
+                    </ul>
+                    <button class="btn-text" onclick="redirectToWhatsapp('Tenho dúvida sobre Trabalhista')">Tirar Dúvida <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <div class="area-card">
+                    <i class="fas fa-hands-holding-circle icon-area"></i>
+                    <h4>Pensões e Auxílios</h4>
+                    <ul class="area-list">
+                        <li>Pensão por Morte</li>
+                        <li>Auxílio Reclusão</li>
+                        <li>Salário Maternidade</li>
+                        <li>Planejamento Previdenciário</li>
+                    </ul>
+                    <button class="btn-text" onclick="redirectToWhatsapp('Tenho dúvida sobre Pensões')">Tirar Dúvida <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadoras -->
+    <section id="calculadoras" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">Calculadoras Jurídicas</h3>
+            <div class="calc-wrapper">
+                <!-- Calc Trabalhista -->
+                <div class="calc-box">
+                    <h4><i class="fas fa-calculator"></i> Estimativa Rescisão</h4>
+                    <form id="form-trabalhista">
+                        <label>Salário Bruto (R$)</label>
+                        <input type="number" id="salario" placeholder="Ex: 2500" required>
+                        <label>Meses trabalhados</label>
+                        <input type="number" id="meses" placeholder="Ex: 24" required>
+                        <label>Motivo</label>
+                        <select id="motivo">
+                            <option value="sem_justa_causa">Demissão sem justa causa</option>
+                            <option value="pedido_demissao">Pedido de demissão</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary full-width">Calcular Estimativa</button>
+                    </form>
+                    <div id="resultado-trabalhista" class="result-box hidden">
+                        <p>Valor Estimado: <strong id="valor-rescisao">R$ 0,00</strong></p>
+                        <small>*Cálculo preliminar.</small>
+                        <a href="#" class="btn btn-whatsapp-sm" onclick="redirectToWhatsapp('Fiz o cálculo trabalhista e quero análise detalhada.')">Solicitar Análise</a>
+                    </div>
+                </div>
+
+                <!-- Calc Previdenciária -->
+                <div class="calc-box">
+                    <h4><i class="fas fa-clock"></i> Aposentadoria</h4>
+                    <form id="form-previdencia">
+                        <label>Sua Idade</label>
+                        <input type="number" id="idade" placeholder="Ex: 60" required>
+                        <label>Tempo de Contribuição (Anos)</label>
+                        <input type="number" id="tempo-contribuicao" placeholder="Ex: 25" required>
+                        <label>Gênero</label>
+                        <select id="genero">
+                            <option value="homem">Homem</option>
+                            <option value="mulher">Mulher</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary full-width">Verificar Status</button>
+                    </form>
+                    <div id="resultado-previdencia" class="result-box hidden">
+                        <p id="texto-previdencia">Resultado...</p>
+                        <a href="#" class="btn btn-whatsapp-sm" onclick="redirectToWhatsapp('Fiz a simulação e quero consultar um advogado.')">Falar com Especialista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Escritório (NOVO DESIGN) -->
+    <section id="sobre" class="section about-section">
+        <div class="container split-screen">
+            <!-- Coluna de Texto -->
+            <div class="text-block">
+                <span class="tagline">Nossa História</span>
+                <h3 class="section-title text-left">Experiência e Dedicação Total ao Seu Caso</h3>
+                <p>Mais do que advogados, somos parceiros na luta pelos seus direitos. Entendemos que por trás de cada processo existe uma história de vida, uma família e um futuro a ser garantido.</p>
+                
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> Atendimento Humanizado e Empático</li>
+                    <li><i class="fas fa-check-circle"></i> Especialistas em vitórias contra o INSS</li>
+                    <li><i class="fas fa-check-circle"></i> Transparência total via WhatsApp</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <strong>+800</strong>
+                        <span>Casos Atendidos</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>98%</strong>
+                        <span>Taxa de Sucesso</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-primary" onclick="redirectToWhatsapp('Gostaria de conhecer o escritório.')">Falar com a Equipe</a>
+            </div>
+
+            <!-- Coluna de Imagem -->
+            <div class="image-block-styled">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipe reunida" class="about-img">
+                <div class="experience-badge">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <strong>15 Anos</strong>
+                        <span>de Excelência</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artigos (Com Modal) -->
+    <section id="blog" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">Artigos Recentes</h3>
+            <p class="section-subtitle">Informação clara para você entender seus direitos.</p>
+            <div class="blog-grid">
+                <!-- Artigo 1 -->
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+                    <div class="blog-content">
+                        <span class="category">Previdenciário</span>
+                        <h5>BPC/LOAS para autistas</h5>
+                        <p>Entenda os requisitos básicos e quem tem direito a esse benefício...</p>
+                        <button class="btn-text read-more-btn" data-id="1">Ler artigo completo</button>
+                    </div>
+                </article>
+                <!-- Artigo 2 -->
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+                    <div class="blog-content">
+                        <span class="category">Trabalhista</span>
+                        <h5>Rescisão Indireta</h5>
+                        <p>Atraso de salário e assédio moral podem gerar indenização...</p>
+                        <button class="btn-text read-more-btn" data-id="2">Ler artigo completo</button>
+                    </div>
+                </article>
+                <!-- Artigo 3 -->
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+                    <div class="blog-content">
+                        <span class="category">INSS</span>
+                        <h5>Auxílio Doença negado?</h5>
+                        <p>O que fazer quando a perícia médica indefere seu pedido...</p>
+                        <button class="btn-text read-more-btn" data-id="3">Ler artigo completo</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Jurídico Legal</h4>
+                <p>Advocacia especializada em garantir o seu futuro e proteger seus direitos trabalhistas.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p><i class="fab fa-whatsapp"></i> (00) 00000-0000</p>
+                <p><i class="fas fa-envelope"></i> contato@escritorio.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sua Cidade - UF</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Jurídico Legal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL (Janela Oculta de Leitura) -->
+    <div id="article-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-header">
+                <span id="modal-category" class="category">Categoria</span>
+                <h2 id="modal-title">Título Carregando...</h2>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Conteúdo entra aqui via JS -->
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="modal-share-btn" class="btn btn-whatsapp-sm">
+                    <i class="fab fa-whatsapp"></i> Tirar dúvida sobre este artigo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
