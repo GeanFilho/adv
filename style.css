@@ -16,7 +16,6 @@
     box-sizing: border-box;
 }
 
-/* CORREÇÃO DO BUG VISUAL (Tela vazando para a direita) */
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -35,17 +34,15 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* Container Centralizado */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    width: 100%; /* Garante que o container não estoure no mobile */
+    width: 100%;
 }
 
 /* --- 2. Tipografia e Botões --- */
 h1, h2, h3, h4, h5 { font-family: var(--font-heading); font-weight: 700; color: var(--primary-color); }
-
 .section-title { text-align: center; font-size: 2rem; margin-bottom: 10px; display: block; }
 .section-subtitle { text-align: center; color: #666; margin-bottom: 40px; display: block; }
 
@@ -55,63 +52,41 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); font-weight: 700; color: 
 .btn-outline { border: 2px solid var(--white); color: var(--white); }
 .btn-outline:hover { background: var(--white); color: var(--primary-color); }
 .full-width { width: 100%; }
-
 .btn-text { background: none; border: none; color: var(--secondary-color); font-weight: 700; cursor: pointer; font-size: 0.9rem; }
 .btn-whatsapp-sm { display: inline-block; background-color: #25D366; color: white; padding: 10px; border-radius: 4px; width: 100%; text-align: center; margin-top: 10px; font-weight: bold; }
 
-/* --- 3. Header e Menu --- */
+/* --- 3. Header --- */
 header {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    height: 70px;
+    position: fixed; width: 100%; top: 0; z-index: 1000; height: 70px;
 }
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
+.header-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
 .logo h1 { font-size: 1.5rem; }
 .logo span { color: var(--secondary-color); }
-
 .nav-menu ul { display: flex; gap: 20px; }
 .nav-menu a { font-weight: 600; font-size: 0.9rem; color: var(--primary-color); }
 .btn-nav { background: var(--primary-color); color: var(--white) !important; padding: 8px 20px; border-radius: 4px; }
 .hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
 
-/* --- 4. Hero Section --- */
+/* --- 4. Hero --- */
 .hero { 
     background: linear-gradient(rgba(15, 43, 70, 0.9), rgba(15, 43, 70, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') center/cover;
-    height: 85vh; 
-    min-height: 500px; 
-    display: flex; 
-    align-items: center; 
-    text-align: center; 
-    color: var(--white); 
-    margin-top: 70px; 
+    height: 85vh; min-height: 500px; display: flex; align-items: center; text-align: center; color: var(--white); margin-top: 70px; 
 }
 .hero-content { max-width: 800px; margin: 0 auto; }
 .hero h2 { font-size: 2.5rem; color: var(--white); margin-bottom: 20px; }
 .hero-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
 
-/* --- 5. Sections Gerais --- */
+/* --- 5. Sections --- */
 .section { padding: 80px 0; }
 .bg-light { background-color: var(--light-bg); }
 
-/* --- 6. Áreas de Atuação --- */
+/* --- 6. Áreas --- */
 .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .area-card { 
-    background: var(--white); 
-    padding: 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
-    border-top: 4px solid var(--secondary-color); 
+    background: var(--white); padding: 30px; border-radius: 8px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 4px solid var(--secondary-color); 
     transition: var(--transition); 
 }
 .area-card:hover { transform: translateY(-5px); }
@@ -126,26 +101,20 @@ header {
 .result-box { margin-top: 20px; padding: 15px; background: #eef7ff; border-left: 4px solid var(--primary-color); }
 .hidden { display: none; }
 
-/* --- 8. SOBRE O ESCRITÓRIO (Novo Design) --- */
+/* --- 8. Sobre --- */
 .about-section { background-color: #fff; padding: 100px 0; }
 .split-screen { display: flex; align-items: center; gap: 50px; }
 .split-screen > div { flex: 1; }
-
 .tagline { color: var(--secondary-color); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: block; margin-bottom: 10px; }
 .text-left { text-align: left; }
-
 .about-list { margin: 25px 0; }
 .about-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-weight: 600; color: #444; }
 .about-list li i { color: var(--secondary-color); font-size: 1.1rem; }
-
 .stats-row { display: flex; gap: 40px; margin-bottom: 30px; padding-top: 20px; border-top: 1px solid #eee; }
 .stat-item strong { display: block; font-size: 2.2rem; color: var(--primary-color); line-height: 1; }
 .stat-item span { font-size: 0.9rem; color: #777; }
-
-/* Imagem Sobre com Badge */
 .image-block-styled { position: relative; padding: 20px; }
 .about-img { width: 100%; border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); object-fit: cover; height: 450px; }
-
 .experience-badge { 
     position: absolute; bottom: 40px; left: -20px; 
     background: var(--white); padding: 20px; border-radius: 8px; 
@@ -155,7 +124,7 @@ header {
 .experience-badge i { font-size: 2rem; color: var(--primary-color); }
 .experience-badge strong { display: block; font-size: 1.2rem; color: var(--primary-color); }
 
-/* --- 9. Artigos & Blog --- */
+/* --- 9. Blog --- */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .blog-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .blog-img { height: 180px; width: 100%; }
@@ -163,11 +132,10 @@ header {
 .category { font-size: 0.75rem; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; }
 .blog-content h5 { font-size: 1.1rem; margin: 10px 0; color: var(--primary-color); }
 
-/* --- 10. MODAL (Janela de Artigos) --- */
+/* --- 10. MODAL --- */
 .modal-overlay { 
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.7); z-index: 2000; 
-    display: flex; justify-content: center; align-items: center; 
+    background: rgba(0,0,0,0.7); z-index: 2000; display: flex; justify-content: center; align-items: center; 
     opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(5px);
 }
 .modal-overlay.active { opacity: 1; visibility: visible; }
@@ -185,31 +153,53 @@ header {
 .modal-body ul { padding-left: 20px; margin-bottom: 20px; }
 .modal-footer { padding: 20px; background: #f9f9f9; text-align: center; border-radius: 0 0 10px 10px; flex-shrink: 0; }
 
-/* --- 11. FOOTER (CORRIGIDO) --- */
+/* --- 11. FOOTER (3 Colunas Completo) --- */
 footer {
     background-color: var(--primary-color);
     color: #ccc;
     padding-top: 60px;
     padding-bottom: 20px;
-    width: 100%; /* Força largura total */
+    width: 100%;
 }
 
-/* Usamos grid ou flex aqui para alinhar as colunas */
-.footer-content {
+.footer-wrapper {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .footer-col {
-    flex: 1;
-    min-width: 250px;
+    flex: 1; /* Faz as 3 colunas terem tamanho igual */
+    min-width: 250px; /* Impede que fiquem muito pequenas */
 }
 
-.footer-col h4 { color: var(--secondary-color); margin-bottom: 15px; }
-.footer-col p, .footer-col a { color: #ccc; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+/* Coluna 1 */
+.footer-col h3 { color: #fff; font-size: 1.5rem; margin-bottom: 15px; }
+.footer-col h3 span { color: var(--secondary-color); }
+.footer-col p { font-size: 0.9rem; line-height: 1.8; color: #dcdcdc; max-width: 350px; margin-bottom: 20px; }
+
+/* Redes Sociais */
+.social-links { display: flex; gap: 15px; }
+.social-links a { 
+    background: rgba(255,255,255,0.1); width: 40px; height: 40px; 
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 50%; transition: 0.3s; color: var(--white);
+}
+.social-links a:hover { background: var(--secondary-color); transform: translateY(-3px); }
+
+/* Colunas 2 e 3 Headers */
+.footer-col h4 { color: var(--secondary-color); margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Lista de Links (Centro) */
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #dcdcdc; transition: 0.3s; font-size: 0.95rem; }
+.footer-links a:hover { color: var(--secondary-color); padding-left: 5px; }
+
+/* Lista de Contato (Direita) */
+.footer-contact li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; color: #dcdcdc; font-size: 0.95rem; }
+.footer-contact i { color: var(--secondary-color); margin-top: 4px; }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -241,12 +231,12 @@ footer {
     
     .hero h2 { font-size: 1.8rem; }
     
-    /* Sobre Responsivo */
+    /* Sobre */
     .split-screen { flex-direction: column; }
     .image-block-styled { margin-top: 40px; }
     .experience-badge { left: 20px; bottom: 20px; }
     .stats-row { gap: 20px; }
 
-    /* Footer Responsivo */
-    .footer-content { flex-direction: column; text-align: center; }
+    /* Footer Mobile */
+    .footer-wrapper { flex-direction: column; gap: 30px; }
 }
